@@ -31,7 +31,6 @@ public class PreventDeathEvent {
 		    }
 			
 			if (itemstack != null) {
-				PatchworkTotems.LOGGER.info("prevent death");
 				if (entity instanceof ServerPlayer) {
 	               ServerPlayer serverplayer = (ServerPlayer)entity;
 	               serverplayer.awardStat(Stats.ITEM_USED.get(Items.TOTEM_OF_UNDYING), 1);

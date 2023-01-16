@@ -3,6 +3,7 @@ package ca.raindoggames.patchworktotems;
 import com.mojang.logging.LogUtils;
 
 import net.minecraft.world.item.Item;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.level.block.Block;
@@ -12,6 +13,7 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
@@ -23,8 +25,12 @@ import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
 import java.util.stream.Collectors;
+
+import ca.raindoggames.patchworktotems.menu.SewingMenuScreen;
+import ca.raindoggames.patchworktotems.register.ModBlockEntities;
 import ca.raindoggames.patchworktotems.register.ModBlocks;
 import ca.raindoggames.patchworktotems.register.ModItems;
+import ca.raindoggames.patchworktotems.register.ModMenuTypes;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(PatchworkTotems.MODID)
@@ -35,19 +41,23 @@ public class PatchworkTotems
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public PatchworkTotems()
-    {
+    {    
+        ModItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        ModBlocks.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        ModBlockEntities.BLOCK_ENTITY_TYPES.register(FMLJavaModLoadingContext.get().getModEventBus());
+        ModMenuTypes.MENU_TYPES.register(FMLJavaModLoadingContext.get().getModEventBus());
+        
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         // Register the enqueueIMC method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
         // Register the processIMC method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
+        // Register the doClientStuff method for modloading
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
-        
-        ModItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
-        ModBlocks.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
 
     private void setup(final FMLCommonSetupEvent event)
@@ -77,6 +87,10 @@ public class PatchworkTotems
     {
         // Do something when the server starts
         LOGGER.info("HELLO from server starting");
+    }
+    
+    private void doClientStuff(final FMLClientSetupEvent event) {
+    	MenuScreens.register(ModMenuTypes.SEWING_MENU.get(), SewingMenuScreen::new);
     }
 
     // You can use EventBusSubscriber to automatically subscribe events on the contained class (this is subscribing to the MOD

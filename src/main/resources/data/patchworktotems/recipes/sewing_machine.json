@@ -1,0 +1,22 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"iii",
+		"n i",
+		"www"
+	],
+	"key": {
+		"i": {
+			"item": "minecraft:iron_ingot"
+		},
+		"n": {
+			"item": "minecraft:diamond"
+		},
+		"w": {
+			"tag": "minecraft:planks"
+		}
+	},
+	"result": {
+		"item": "patchworktotems:sewing_machine"
+	}
+}
