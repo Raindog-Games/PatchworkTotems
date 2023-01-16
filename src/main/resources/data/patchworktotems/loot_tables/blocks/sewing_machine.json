@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:block",
+  	"pools": [
+  		{
+  			"name": "sewing_machine",
+  			"rolls": 1.0,
+  			"bonus_rolls": 0.0,
+  			"entries": [
+  				{
+  					"type": "minecraft:item",
+  					"name": "patchworktotems:sewing_machine"
+  				}
+  			]
+  		}
+  	]
+}
