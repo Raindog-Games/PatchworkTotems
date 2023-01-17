@@ -120,8 +120,6 @@ public class PatchworkTotems
 				if (entity instanceof ServerPlayer) {
 	               ServerPlayer serverplayer = (ServerPlayer)entity;
 	               serverplayer.awardStat(Stats.ITEM_USED.get(Items.TOTEM_OF_UNDYING), 1);
-	               //CriteriaTriggers.USED_TOTEM.trigger(serverplayer, itemstack);
-	               PatchworkTotems.LOGGER.info(serverplayer.toString());
 	               NetworkManager.CHANNEL.sendTo(new TotemPacket(itemstack, serverplayer), serverplayer.connection.getConnection(), NetworkDirection.PLAY_TO_CLIENT);
 	            }
 				NetworkManager.CHANNEL.send(PacketDistributor.TRACKING_ENTITY.with(() -> entity), new TotemPacket(itemstack, entity));			
