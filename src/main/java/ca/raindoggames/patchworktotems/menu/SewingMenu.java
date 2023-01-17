@@ -1,6 +1,5 @@
 package ca.raindoggames.patchworktotems.menu;
 
-import ca.raindoggames.patchworktotems.register.ModBlockEntities;
 import ca.raindoggames.patchworktotems.register.ModBlocks;
 import ca.raindoggames.patchworktotems.register.ModItems;
 import ca.raindoggames.patchworktotems.register.ModMenuTypes;
