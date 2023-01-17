@@ -37,7 +37,6 @@ public class TotemPacket {
 	}
 	
 	public static void handle(final TotemPacket packet, Supplier<NetworkEvent.Context> ctx) {
-		//PatchworkTotems.LOGGER.info("handle packet entity {}", packet.entity.toString());
 		ctx.get().enqueueWork(() -> DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> TotemPacket.handlePacket(packet, ctx)));
 		ctx.get().setPacketHandled(true);
 	}
