@@ -1,0 +1,6 @@
+{
+	"parent": "minecraft:item/generated",
+	"textures": {
+    	"layer0": "patchworktotems:item/patch_ender_pearl"
+  	}
+}

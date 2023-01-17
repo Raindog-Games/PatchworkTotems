@@ -82,6 +82,11 @@ public class SewingMenu extends AbstractContainerMenu {
 	   if (!itemstack.isEmpty() && itemstack.getItem() == Items.TOTEM_OF_UNDYING) {
 		   this.resultSlots.setItem(0, ModItems.PATCHTOTEM.get().getDefaultInstance());	   
 	   }  
+	   if (!itemstack.isEmpty() && itemstack.getItem() == Items.ENDER_PEARL) {
+		   ItemStack resultItems = ModItems.PATCH_ENDER_PEARL.get().getDefaultInstance();
+		   resultItems.setCount(itemstack.getCount());
+		   this.resultSlots.setItem(0, resultItems);
+	   }
 	   this.broadcastChanges();
 	}
 	

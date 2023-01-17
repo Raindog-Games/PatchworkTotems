@@ -1,5 +1,6 @@
 {
   "block.patchworktotems.sewing_machine": "Sewing Machine",
   "item.patchworktotems.patch_totem": "Patched Totem",
+  "item.patchworktotems.patch_ender_pearl": "Patched Ender Pearl",
   "container.sewing_machine": "Sewing Machine"
 }
