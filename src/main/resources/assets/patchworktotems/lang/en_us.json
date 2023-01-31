@@ -2,5 +2,13 @@
   "block.patchworktotems.sewing_machine": "Sewing Machine",
   "item.patchworktotems.patch_totem": "Patched Totem",
   "item.patchworktotems.patch_ender_pearl": "Patched Ender Pearl",
+  "item.patchworktotems.pattern_of_protection": "Pattern of Protection",
+  "item.patchworktotems.pattern_of_protection_fire": "Pattern of Fire Protection",
+  "item.patchworktotems.pattern_of_protection_projectile": "Pattern of Projectile Protection",
+  "item.patchworktotems.pattern_of_protection_explosion": "Pattern of Blast Protection",
+  "enchantment.patchworktotems.patch_protection_all": "Protection %1$s Patch",
+  "enchantment.patchworktotems.patch_protection_fire": "Fire Protection %1$s Patch",
+  "enchantment.patchworktotems.patch_protection_projectile": "Projectile Protection %1$s Patch",
+  "enchantment.patchworktotems.patch_protection_explosion": "Blast Protection %1$s Patch",
   "container.sewing_machine": "Sewing Machine"
 }

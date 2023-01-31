@@ -1,0 +1,14 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "minecraft:book"
+		},
+		{
+			"item": "minecraft:blaze_powder"
+		}
+	],
+	"result": {
+		"item": "patchworktotems:pattern_of_protection_fire"
+	}
+}

@@ -1,6 +1,7 @@
 package ca.raindoggames.patchworktotems.menu;
 
 import ca.raindoggames.patchworktotems.register.ModBlocks;
+import ca.raindoggames.patchworktotems.register.ModEnchantments;
 import ca.raindoggames.patchworktotems.register.ModItems;
 import ca.raindoggames.patchworktotems.register.ModMenuTypes;
 import net.minecraft.network.FriendlyByteBuf;
@@ -12,9 +13,11 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.inventory.ResultContainer;
 import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.item.EnchantedBookItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.item.enchantment.EnchantmentInstance;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 
@@ -84,8 +87,28 @@ public class SewingMenu extends AbstractContainerMenu {
 	   }  
 	   if (!itemstack.isEmpty() && itemstack.getItem() == Items.ENDER_PEARL) {
 		   ItemStack resultItems = ModItems.PATCH_ENDER_PEARL.get().getDefaultInstance();
-		   resultItems.setCount(itemstack.getCount());
+		   resultItems.setCount(itemstack.getCount());	   
 		   this.resultSlots.setItem(0, resultItems);
+	   }
+	   if (!itemstack.isEmpty() && itemstack.getItem() == ModItems.PATTERN_OF_PROTECTION.get()) {
+		   ItemStack book = new ItemStack(Items.ENCHANTED_BOOK);
+		   EnchantedBookItem.addEnchantment(book, new EnchantmentInstance(ModEnchantments.PATCH_PROTECTION_ALL.get(), 4));
+		   this.resultSlots.setItem(0, book);
+	   }
+	   if (!itemstack.isEmpty() && itemstack.getItem() == ModItems.PATTERN_OF_PROTECTION_FIRE.get()) {
+		   ItemStack book = new ItemStack(Items.ENCHANTED_BOOK);
+		   EnchantedBookItem.addEnchantment(book, new EnchantmentInstance(ModEnchantments.PATCH_PROTECTION_FIRE.get(), 4));
+		   this.resultSlots.setItem(0, book);
+	   }
+	   if (!itemstack.isEmpty() && itemstack.getItem() == ModItems.PATTERN_OF_PROTECTION_PROJECTILE.get()) {
+		   ItemStack book = new ItemStack(Items.ENCHANTED_BOOK);
+		   EnchantedBookItem.addEnchantment(book, new EnchantmentInstance(ModEnchantments.PATCH_PROTECTION_PROJECTILE.get(), 4));
+		   this.resultSlots.setItem(0, book);
+	   }
+	   if (!itemstack.isEmpty() && itemstack.getItem() == ModItems.PATTERN_OF_PROTECTION_EXPLOSION.get()) {
+		   ItemStack book = new ItemStack(Items.ENCHANTED_BOOK);
+		   EnchantedBookItem.addEnchantment(book, new EnchantmentInstance(ModEnchantments.PATCH_PROTECTION_EXPLOSION.get(), 4));
+		   this.resultSlots.setItem(0, book);
 	   }
 	   this.broadcastChanges();
 	}

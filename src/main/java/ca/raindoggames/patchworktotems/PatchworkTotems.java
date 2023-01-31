@@ -39,6 +39,7 @@ import java.util.stream.Collectors;
 import ca.raindoggames.patchworktotems.menu.SewingMenuScreen;
 import ca.raindoggames.patchworktotems.register.ModBlockEntities;
 import ca.raindoggames.patchworktotems.register.ModBlocks;
+import ca.raindoggames.patchworktotems.register.ModEnchantments;
 import ca.raindoggames.patchworktotems.register.ModItems;
 import ca.raindoggames.patchworktotems.register.ModMenuTypes;
 import ca.raindoggames.patchworktotems.network.NetworkManager;
@@ -56,7 +57,8 @@ public class PatchworkTotems
     {    
         ModItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
         ModBlocks.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
-        ModBlockEntities.BLOCK_ENTITY_TYPES.register(FMLJavaModLoadingContext.get().getModEventBus());
+        ModBlockEntities.BLOCK_ENTITY_TYPES.register(FMLJavaModLoadingContext.get().getModEventBus());  
+        ModEnchantments.ENCHANTMENTS.register(FMLJavaModLoadingContext.get().getModEventBus());
         ModMenuTypes.MENU_TYPES.register(FMLJavaModLoadingContext.get().getModEventBus());
         
         // Register the setup method for modloading
