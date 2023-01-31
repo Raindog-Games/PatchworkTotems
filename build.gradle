@@ -212,10 +212,8 @@ curseforge {
 	project {
 		id = '818535'
 		changelog = '''
-		- Adds Sewing Machine Block
-		- Adds patched_totem item
-		- Adds patched_pearl item
-		- Adds hooks to trigger patched_totem just like it were a Vanilla token
+		- Adds Protection enchantment patches (fire, blast, projectile, all) levels 1 - 4
+		- Adds recipe to create pattern to exchange with sewing machine for protection books
 		'''
 		releaseType = 'release'
 		addGameVersion '1.18.2'
