@@ -10,6 +10,7 @@ This mod is useful for modpacks that disable or change the behaviour of Vanilla 
 - New Sewing Machine Block
 - Convert Vanilla totems into patched totems
 - Convert Vanilla pearls into patched pearls
+- Craft patterns of protection that can be exchanged with Sewing Machine for Protection Enchantment Patches
 
 ## Dependencies:
 - Minecraft: 1.18.2
