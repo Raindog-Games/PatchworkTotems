@@ -212,8 +212,7 @@ curseforge {
 	project {
 		id = '818535'
 		changelog = '''
-		- Adds Protection enchantment patches (fire, blast, projectile, all) levels 1 - 4
-		- Adds recipe to create pattern to exchange with sewing machine for protection books
+		- Cleanup sewing machine model in displays
 		'''
 		releaseType = 'release'
 		addGameVersion '1.18.2'
